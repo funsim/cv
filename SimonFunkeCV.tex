@@ -1,0 +1,281 @@
+% Don't like 10pt? Try 11pt or 12pt
+\documentclass[11pt]{article}
+
+% This is a helpful package that puts math inside length specifications
+\usepackage{calc}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+
+% Simpler bibsection for CV sections
+% (thanks to natbib for inspiration)
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}
+    {\minipage[t]{\linewidth}\list{}{%
+        \setlength{\leftmargin}{\bibhang}%
+        \setlength{\itemindent}{-\leftmargin}%
+        \setlength{\itemsep}{\bibsep}%
+        \setlength{\parsep}{\z@}%
+        }}
+    {\endlist\endminipage}
+\makeatother
+
+
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=0.025in,     % Length of section titles
+            marginparsep=.03in,       % Space between titles and text
+            margin=0.6in, %45in,               % 1 inch margins
+            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+%% This gives us fun enumeration environments. compactitem will be nice.
+\usepackage{paralist}
+
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{black}{rgb}{0,0,0}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor= black,urlcolor= black,
+            anchorcolor= black,citecolor= black}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Place at top of document. It should be the first thing.
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\begin{center} \LARGE \bfseries\textsc{ #1} \end{center}}%[-0.15\baselineskip]%
+                 %\rule{\columnwidth}{1pt}%
+        \end{minipage}}
+
+\newcommand{\address}[3]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\begin{center} \vspace{0.25cm} \textnormal \bfseries #1 \\ \textit{email: } #2 ~~\textit{phone: } #3 \end{center}}%[-0.15\baselineskip]%
+                 %\rule{\columnwidth}{1pt}%
+        \end{minipage}}
+
+
+\newenvironment{heading}[1]{\hspace{0.5cm} \textbf{#1}}
+
+\newenvironment{headingtitle}[2]{\hspace{0.5cm} \textbf{#1}, #2}
+
+\newenvironment{dateheadingtitle}[2]{ #1 #2.}
+
+\newenvironment{locationdate}[2]{#2 \quad \textbf{#1}.}
+
+\newenvironment{positionlocationdate}[3]{#3 \quad \textbf{#1, #2}.}
+
+\newenvironment{supervision}[3]{#3 \quad \textbf{#1} #2.}
+
+\definecolor{dark-gray}{gray}{0.1}
+
+\newenvironment{sectionheader}[1]{\vspace{0.5cm}\color{black}{\large{\bfseries{\textsc{#1}}}\normalsize
+}\color{Black}}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]
+        {\begin{itemize}[ #1]}{\end{itemize}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]
+        {\begin{compactitem}[#1]}{\end{compactitem}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{Simon W. Funke}
+\address{Simula Research Laboratory, Martin Linges vei 17, 1364 Fornebu, Norway}{simon@simula.no}{+47 40 62 55 86}
+
+\newlength{\rcollength}\setlength{\rcollength}{1.0in}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Personal information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Personal information}
+
+\begin{itemize}
+\item[] Name: Funke, Wolfgang, Simon
+    \vspace{-0.2cm}
+\item[] Date of birth: 17.10.1983
+    \vspace{-0.2cm}
+\item[] Sex: Male
+    \vspace{-0.2cm}
+\item[] Nationality: German
+    \vspace{-0.2cm}
+\item[] Web page: http://simonfunke.com
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Education}
+
+\begin{outerlist}
+\item[] \positionlocationdate{PhD, Computational science}{Imperial College London, UK}{2013}
+        \begin{innerlist}
+            \item Date of approved disputation: 01.03.2013.
+            \item Department of Earth Science and Engineering.
+            \item Thesis title: \textit{The automation of PDE-constrained optimisation and its applications}.
+            \item Winner of the Imperial College Startup Venture Catalyst Award for innovative PhD results.
+            \item Supervisors: P.E. Farrell, M.D. Piggott, P.A. Allison, G.J. Gorman.
+        \end{innerlist}
+\item[] \positionlocationdate{Diplom, Mathematics}{Technische Universit\"at M\"unchen, Germany}{2009}
+            \begin{innerlist}
+                \item Department of Mathematics.
+                \item The German Diplom is equivalent to a Master degree.
+                \item Thesis title: \textit{Fast solvers for the Navier-Stokes equations on high Reynold numbers}.
+                \item Passed with high distinction (1.0).
+                \item Winner of the {{Hurwitz-Association Award}} for an excellence diploma thesis.
+                \item Supervisor: M. Ulbrich.
+            \end{innerlist}
+\item[] \positionlocationdate{Erasmus student}{\'Ecole normale sup\'erieure de Lyon, France}{2007}
+\end{outerlist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Employment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Current and previous positions}
+\begin{outerlist}
+\item[] \positionlocationdate{\hspace{-0.2cm}20\% Associate professor}{University of Oslo, Norway}{2015 - today}
+\item[] \positionlocationdate{\hspace{-0.2cm}Postdoctoral Fellow}{Simula Research Laboratory, Oslo, Norway}{2013 - today}
+    %Studying predictive modeling in physiological flow.
+\item[] \locationdate{Consultant, Kalkulo AS, Oslo, Norway}{2014 - 2015}
+        %Metocean model for oil\&gas industry company.
+\item[] \positionlocationdate{Postdoctoral Fellow}{Imperial College London, London, UK}{2012 - 2014}\\
+    20\% adjoint position in 2014 in addition to the PostDoc position at Simula Research Laboratory
+\item[] \locationdate{Consultant, E.ON AG, D\"usseldorf, Germany}{2013 - 2014}
+        %Numerical study of safety measures for the release of toxic dusts.
+\end{outerlist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Awards %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Awards}
+\begin{outerlist}
+\item[] 2015\quad {\textbf{Wilkinson Prize for Numerical Software}}\\
+    The Wilkinson prize for Numerical Software is a prestigous prize in scientific computing, awarded every four years to the authors of an outstanding piece of numerical software.
+    In 2015, the prize will be awarded to Funke and his co-authors (P.E. Farrell, D.A. Ham, M.E. Rognes) for the high-level AD tool dolfin-adjoint.
+\item[] 2010\quad {\textbf{Imperial College Excellence Award}}\\
+This award was received as part of the Applied Modelling And Computation Group, Imperial Collegel London for its high academic achievements and significant future potential.
+\item[] 2009\quad {\textbf{Grantham Institute for Climate Change and Fujitsu CASE Studentship}}\\
+    This PhD studentship was received to develop novel numerical methods on renewable energy using high-performance computing.
+\end{outerlist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Mobility %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Mobility}
+\begin{outerlist}
+\item[] {Studied and worked (> 6 months) in research institutions in \textbf{4 different countries}.}
+\item[] {Shorter, invited research visits: Texas A\&M University, USA (2015), Humboldt University of Berlin, Germany (2013), Simula Research Laboratory, Norway (2012), Institut of Atmospheric Physics, Beijing, China (2011).}
+\end{outerlist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Supervision %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Supervision}
+\begin{outerlist}
+\item[] \supervision{5 Master\&Bachelor students}{University of Oslo, Norway and Department of Earth Science and Engineering, Imperial College London, UK}{}
+\item[] \supervision{1 PhD student}{co-supervisor, expected submission date 2016, Department of Earth Science and Engineering, Imperial College London, UK}{}
+\end{outerlist}
+
+\sectionheader{Teaching activities}
+\begin{outerlist}
+\item[] \supervision{\hspace{1.2cm}Invited lecture,}{Introduction to PDE-constrained optimisation, Zhejiang University, China}{2014}
+    \item[] \supervision{Tutorial teaching,}{several courses on computational science, programming and mathematics. Department of Earth Science and Engineering, Imperial College London, UK}{2010 - 2012}
+\end{outerlist}
+
+\sectionheader{Commissions of Trust}
+\begin{outerlist}
+\item[] \supervision{Reviewer}{for SIAM Journal on Scientific Computing (SIAM),
+    Computer Physics Communications (Elsevier), Energies (MDPI), European Wave
+and Tidal Energy Conference Series}{2013 - today}
+\item [] \supervision{\textbf{Mini-symposium organiser, }}{Efficient Solvers for PDE-constrained Optimization, \textit{SIAM CSE15}}{2015}
+\end{outerlist}
+
+\sectionheader{Research Interest/Research Profile }
+%Provide an ‘abstract’, no more than a short paragraph, which outlines your current and
+%prospective lines of research.
+
+Funke's research interests center around optimisation problems governed by
+partial differential equations, with a focus on their numerical solution. In
+particular, he is interested in the automated derivation of adjoint and tangent
+linear models and their use in optimal control, data inversion and design optimisation.
+He is a founder of the dolfin-adjoint project, a software which automatically
+derives adjoint models from complex computer models solving partial
+differential equations based on a high-level symbolic problem specification
+language that mimics mathematical notation.
+
+Funke applies these advances to applications in a wide variety of different
+domains including renewable energy and bioengineering. For the renewable energy
+sector, he developed OpenTidalFarm, an open-source software for optimising of
+tidal turbine farms, such as the optimal position of turbines within the farm.
+In bioengineering, he developes data assimilation techniques for blood flow
+simulations, with the aim to tune high-fidelity numerical blood flow models to
+match with MRI measurements.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Publications %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\sectionheader{Peer reviewed publications}
+\begin{enumerate}
+\item \textit{SW Funke, SC Kramer, MD Piggott.} Design optimisation and resource assessment for tidal-stream renewable energy farms using a new continuous turbine approach, \textit{Renewable Energy}, in review, 2015.
+\item \textit{DM Culley, SW Funke, SC Kramer, MD Piggott.} Tidal stream resource assessment through optimisation of array design with quantification of uncertainty, \textit{EWTEC 2015 proceedings}, accepted, 2015.
+\item \textit{T Roc, SW Funke, KM Thyng.} Standard methodology for tidal array project optimisation: An idealized study of the Minas Passage, \textit{EWTEC 2015 proceedings}, accepted, 2015.
+\item \textit{SC Kramer, SW Funke, MD Piggott.} A continuous approach for the optimisation of tidal turbine farms, \textit{EWTEC 2015 proceedings}, accepted, 2015.
+\item \textit{DM Culley, SW Funke, SC Kramer, MD Piggott.} Integration of cost modelling within the micro-siting design optimisation of tidal turbine arrays, \textit{Renewable Energy}, 2015.
+\item \textit{PE Farrell, A Birkisson, SW Funke.} Deflation techniques for finding distinct solutions of nonlinear partial differential equations, \textit{SIAM Journal on Scientific Computing}, 2015.
+\item \textit{R Venell, SW Funke, S Draper, C Stevens.} Designing Large Arrays of Tidal Turbines: a synthesis and review, \textit{Renewable \& Sustainable Energy Reviews}, 41, pp. 454-472, 2015.
+\item \textit{GL Barnett, SW Funke, MD Piggott.} Hybrid global-local optimisation algorithms for the layout design of tidal turbine arrays, \textit{Renewable Energy}, in review, 2014.
+\item \textit{PE Farrell, SW Funke.} Exploiting high-level structure in
+    algorithmic differentiation, in review, 2014.
+\item \textit{DM Culley, SW Funke, SC Kramer, MD Piggott.} A hierarchy of approaches for the optimal design of tidal turbine arrays, Proceedings of the 5th International Conference on Ocean Energy, 2014.
+\item \textit{SW Funke, PE Farrell, MD Piggott.} Tidal turbine array optimisation using the adjoint approach, \textit{Renewable Energy}, 63, pp. 658-673,  2014.
+\item \textit{PE Farrell, CJ Cotter, SW Funke.} A framework for the automation of generalised stability theory. \textit{SIAM Journal on     Scientific Computing}, 36(1) pp. C25-C48, 2014.
+%\item \textit{PE Farrell, SW Funke}. Exploiting high-level structure in algorithmic differentiation, submitted, 2013.
+\item \textit{PE Farrell, DA Ham, SW Funke, ME Rognes.} Automated derivation of the adjoint of high-level transient finite element programs, \textit{SIAM Journal on Scientific Computing}, 35(4), pp. C369-C393, 2013.
+\item \textit{SW Funke, CC Pain, SC Kramer, MD Piggott.} A wetting and drying algorithm with a combined pressure/free-surface formulation for non-hydrostatic models, \textit{Advances in Water Resources}, 2011.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Presentations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Dissemination: selected presentations}
+
+\begin{outerlist}
+\item[] \textbf{Best poster award}, dolfin-adjoint, automated adjoint models for FEniCS, \textit{SIAM Conference on Computational Science}, Salt Lake City, USA, 2015
+\item[] Tidal Farm Layout Optimisation and Resource Assessment based on PDE-constrained optimisation, \textit{International Conference on Ocean Energy}, Halifax, Canada, 2014
+\item[] \textbf{Invited talk}, Introduction to FEniCS and automated adjoints, \textit{Norwegian Meteorological Institute}, Oslo, Norway, 2014
+%\item[] Automated adjoint models with FEniCS with applications in cardiac electrophysiology, \textit{Simula Research Laboratory}, Oslo, Norway, 2014
+\item[] PDE-constrained optimisation in Hilbert spaces, \textit{FEniCS'14}, Paris, France, 2014
+%\item[] Automated adjoints of finite element discretizations, \textit{SIAM Conference on Computational Science \& Engineering}, Boston, USA, 2013
+%\item[] PDE-constrained optimisation using automated adjoints of finite element models, Imperial College London, London, UK, 2012
+%\item[] libadjoint: a new abstraction for developing adjoint models, \textit{FEniCS'12}, Simula Research Laboratory, Oslo, Norway, 2012
+%\item[] Tidal turbine optimisation using the adjoint approach, \textit{Ocean Day}, Imperial College London, London, UK, 2012
+%\item[] \textbf{Invited talk}, A new way to develop discrete adjoints, Simula Research Laboratory, Oslo, Norway, 2012
+%\item[] Towards a Fluidity-ICOM adjoint, \textit{International Workshop on Multiscale (Un-)structured Mesh Numerical Modelling}, Alfred Wegener Institute for Polar and Marine Research, Bremerhaven, Germany, 2011
+\item[] \textbf{Invited talk} An introduction to libadjoint, Institut of Atmospheric Physics, Beijing, China, July 2011
+%\item[] A wetting and drying algorithm for non-hydrostatic models with combined pressure/free-surface, \textit{European Geosciences Union General Assembly 2011}, Vienna, Austria, 2011.
+%\item[] A new wetting and drying algorithm using a combined pressure/free-surface finite element method, \textit{International Workshop on Multiscale (Un)-structured Mesh Numerical Ocean Modeling}, Massachusetts Institute of Technology, Boston, USA, 2010.
+\end{outerlist}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
