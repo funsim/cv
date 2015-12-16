@@ -72,10 +72,10 @@
                  %\rule{\columnwidth}{1pt}%
         \end{minipage}}
 
-\newcommand{\address}[3]%
+\newcommand{\address}[4]%
         {\hspace*{-\marginparsep minus \marginparwidth}%
          \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
-                {\begin{center} \vspace{0.25cm} \textnormal \bfseries #1 \\ \textit{email: } #2 ~~\textit{phone: } #3 \end{center}}%[-0.15\baselineskip]%
+         {\begin{center} \vspace{0.25cm} \textnormal \bfseries #1 \\ \textit{email: } #2 ~~\textit{web: } #4 ~~\textit{phone: } #3 \end{center}}%[-0.15\baselineskip]%
                  %\rule{\columnwidth}{1pt}%
         \end{minipage}}
 
@@ -115,8 +115,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\makeheading{Simon W. Funke}
-\address{Simula Research Laboratory, Martin Linges vei 17, 1364 Fornebu, Norway}{simon@simula.no}{+47 40 62 55 86}
+\makeheading{Simon Wolfgang Funke}
+\address{Simula Research Laboratory, Martin Linges vei 17, 1364 Fornebu, Norway}{simon@simula.no}{+47 40 62 55 86}{\href{http://www.simonfunke.com}{www.simonfunke.com}}
 
 \newlength{\rcollength}\setlength{\rcollength}{1.0in}%
 
@@ -132,35 +132,10 @@
     \vspace{-0.2cm}
 \item[] Nationality: German
     \vspace{-0.2cm}
-\item[] Web page: http://simonfunke.com
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\sectionheader{Education}
-
-\begin{outerlist}
-\item[] \positionlocationdate{PhD, Computational science}{Imperial College London, UK}{2013}
-        \begin{innerlist}
-            \item Winner of the Imperial College Startup Venture Catalyst Award for innovative PhD results.
-            \item Thesis title: \textit{The automation of PDE-constrained optimisation and its applications}.
-            \item Department of Earth Science and Engineering.
-            \item Date of approved disputation: 01.03.2013.
-            \item Supervisors: M.D. Piggott, P.E. Farrell, P.A. Allison, G.J. Gorman.
-        \end{innerlist}
-\item[] \positionlocationdate{Diplom, Mathematics}{Technische Universit\"at M\"unchen, Germany}{2009}
-            \begin{innerlist}
-                \item Passed with high distinction (1.0).
-                \item Winner of the {{Hurwitz-Association Award}} for an excellence diploma thesis.
-                \item Thesis title: \textit{Fast solvers for the Navier-Stokes equations on high Reynold numbers}.
-                \item Department of Mathematics.
-                \item The German Diplom is equivalent to a Master degree.
-                \item Supervisor: M. Ulbrich.
-            \end{innerlist}
-\item[] \positionlocationdate{Erasmus student}{\'Ecole normale sup\'erieure de Lyon, France}{2007}
-\end{outerlist}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%% Employment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\sectionheader{Current and previous positions}
+\sectionheader{Positions}
 \begin{outerlist}
 \item[] \positionlocationdate{\hspace{-0.2cm}20\% Associate professor}{University of Oslo, Norway}{2015 - today}
 \item[] \positionlocationdate{\hspace{-0.2cm}Postdoctoral Fellow}{Simula Research Laboratory, Oslo, Norway}{2013 - today}
@@ -173,29 +148,63 @@
         %Numerical study of safety measures for the release of toxic dusts.
 \end{outerlist}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% Awards %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\sectionheader{Awards}
+%%%%%%%%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Education}
+
 \begin{outerlist}
-\item[] 2015\quad {\textbf{Wilkinson Prize for Numerical Software}}\\
+\item[] \positionlocationdate{PhD, Computational science}{Imperial College London, UK}{2013}
+        \begin{innerlist}
+            \item Thesis title: \textit{The automation of PDE-constrained optimisation and its applications}.
+            \item Department of Earth Science and Engineering.
+            \item Supervisors: M.D. Piggott, P.E. Farrell, P.A. Allison, G.J. Gorman.
+            \item Date of approved disputation: 01.03.2013.
+        \end{innerlist}
+\item[] \positionlocationdate{Diplom, Mathematics}{Technische Universit\"at M\"unchen, Germany}{2009}
+            \begin{innerlist}
+                \item Passed with high distinction (1.0).
+                \item Thesis title: \textit{Fast solvers for the Navier-Stokes equations on high Reynold numbers}.
+                \item Department of Mathematics.
+                \item The German Diplom is equivalent to a Master degree.
+                \item Supervisor: M. Ulbrich.
+            \end{innerlist}
+\item[] \positionlocationdate{Erasmus student}{\'Ecole normale sup\'erieure de Lyon, France}{2007}
+\end{outerlist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Awards %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionheader{Awards and Prizes}
+\begin{itemize}
+\item {\textbf{Wilkinson Prize for Numerical Software}}, 2015\\
     The Wilkinson prize for Numerical Software is a prestigous prize in scientific computing, awarded every four years to the authors of an outstanding piece of numerical software.
     In 2015, the prize will be awarded to Funke and his co-authors (P.E. Farrell, D.A. Ham, M.E. Rognes) for the high-level AD tool dolfin-adjoint.
-\item[] 2010\quad {\textbf{Imperial College Excellence Award}}\\
-This award was received as part of the Applied Modelling And Computation Group, Imperial Collegel London for its high academic achievements and significant future potential.
-\item[] 2009\quad {\textbf{Grantham Institute for Climate Change and Fujitsu CASE Studentship}}\\
-    This PhD studentship was received to develop novel numerical methods on renewable energy using high-performance computing.
-\end{outerlist}
+\item Best Poster Award, CSE 2015
+\item Imperial College Startup Venture Catalyst Award, 2013
+\item {Imperial College Excellence Award}, 2010%\\
+%This award was received as part of the Applied Modelling And Computation Group, Imperial College London for its high academic achievements and significant future potential.
+\item {Grantham Institute for Climate Change and Fujitsu CASE Studentship}, 2009
+%    This PhD studentship was received to develop novel numerical methods on renewable energy using high-performance computing.
+\item {Google Interactivism Award}, 2009
+\item Hurwitz-Association Award for an excellence diploma thesis, 2009
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Mobility %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionheader{Mobility}
 \begin{outerlist}
 \item[] {Studied and worked (> 6 months) in research institutions in \textbf{4 different countries}.}
-\item[] {Shorter, invited research visits: Texas A\&M University, USA (2015), Humboldt University of Berlin, Germany (2013), Simula Research Laboratory, Norway (2012), Institut of Atmospheric Physics, Beijing, China (2011).}
+\item[] {Research visits:
+    \begin{innerlist}
+        \item Texas A\&M University, USA (2015)
+        \item Humboldt University of Berlin, Germany (2013)
+        \item Simula Research Laboratory, Norway (2012)
+        \item Isaac Newton Institute, Cambridge, UK (2012)
+        \item Institut of Atmospheric Physics, Beijing, China (2011).
+    \end{innerlist}
+        }
 \end{outerlist}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Supervision %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionheader{Supervision}
 \begin{outerlist}
-\item[] \supervision{5 Master\&Bachelor students}{University of Oslo, Norway and Department of Earth Science and Engineering, Imperial College London, UK}{}
+\item[] \supervision{5 Master\&Bachelor students}{Faculty of Mathematics and Natural Sciences, University of Oslo, Norway and Department of Earth Science and Engineering, Imperial College London, UK}{}
 \item[] \supervision{1 PhD student}{co-supervisor, expected submission date 2016, Department of Earth Science and Engineering, Imperial College London, UK}{}
 \end{outerlist}
 
@@ -208,10 +217,10 @@ This award was received as part of the Applied Modelling And Computation Group, 
 \sectionheader{Commissions of Trust}
 \begin{outerlist}
 \item[] \supervision{Reviewer}{for SIAM Journal on Scientific Computing (SIAM),
-    Computer Physics Communications (Elsevier), Energies (MDPI), European Wave
+    Computer Physics Communications (Elsevier), Energies (MDPI) and European Wave
 and Tidal Energy Conference Series}{2013 - today}
-\item [] \supervision{\textbf{Workshop organiser, }}{Workshop on Advanced Techniques in Biomedical Computing, \textit{Center for Biomedical Computing}}{2015}
-\item [] \supervision{\textbf{Mini-symposium organiser, }}{Efficient Solvers for PDE-constrained Optimization, \textit{SIAM CSE15}}{2015}
+\item [] \supervision{\textbf{Organiser}}{of a Workshop on Advanced Techniques in Biomedical Computing, \textit{Center for Biomedical Computing}}{2015}
+\item [] \supervision{\textbf{Organiser}}{of a Mini-symposium on Efficient Solvers for PDE-constrained Optimization, \textit{SIAM CSE15}}{2015}
 \end{outerlist}
 
 \sectionheader{Research Interest/Research Profile }
@@ -237,28 +246,32 @@ match with MRI measurements.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Publications %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\sectionheader{Peer reviewed publications}
+\sectionheader{Journal publications}
 \begin{enumerate}
     \item \textit{DM Culley, SW Funke, SC Kramer, MD Piggott.} Integration of cost modelling within the micro-siting design optimisation of tidal turbine arrays, \textit{Renewable Energy}, \href{https://doi.org/10.1016/j.renene.2015.06.013}{doi:10.1016/j.renene.2015.06.013}, 2016.
     \item \textit{S Rao , H Xue, M Bao, SW Funke.} Determining tidal turbine farm efficiency in the Western Passage using the disc actuator theory, \textit{Ocean Dynamics}, \href{https://doi.org/10.1007/s10236-015-0906-y}{doi:10.1007/s10236-015-0906-y}, 2015
 \item \textit{PE Farrell, A Birkisson, SW Funke.} Deflation techniques for finding distinct solutions of nonlinear partial differential equations, \textit{SIAM Journal on Scientific Computing}, \href{https://doi.org/10.1137/140984798}{doi:10.1137/140984798}, 2015.
 \item \textit{R Venell, SW Funke, S Draper, C Stevens.} Designing Large Arrays of Tidal Turbines: a synthesis and review, \textit{Renewable \& Sustainable Energy Reviews}, \href{https://doi.org/10.1016/j.rser.2014.08.022}{doi:10.1016/j.rser.2014.08.022}, 2015.
+\item \textit{SW Funke, PE Farrell, MD Piggott.} Tidal turbine array optimisation using the adjoint approach, \textit{Renewable Energy}, \href{https://doi.org/10.1016/j.renene.2013.09.031}{doi:10.1016/j.renene.2013.09.031}, 2014.
+\item \textit{PE Farrell, CJ Cotter, SW Funke.} A framework for the automation of generalised stability theory. \textit{SIAM Journal on     Scientific Computing}, \href{https://doi.org/10.1016/10.1137/12090074}{10.1137/12090074}, 2014.
+%\item \textit{PE Farrell, SW Funke}. Exploiting high-level structure in algorithmic differentiation, submitted, 2013.
+\item \textit{PE Farrell, DA Ham, SW Funke, ME Rognes.} Automated derivation of the adjoint of high-level transient finite element programs, \textit{SIAM Journal on Scientific Computing}, \href{https://doi.org/10.1016/10.1137/120873558}{10.1137/120873558}, 2013.
+\item \textit{SW Funke, CC Pain, SC Kramer, MD Piggott.} A wetting and drying algorithm with a combined pressure/free-surface formulation for non-hydrostatic models, \textit{Advances in Water Resources}, \href{https://doi.org/10.1016/j.advwatres.2011.08.007}{10.1016/j.advwatres.2011.08.007}, 2011.
+\end{enumerate}
+
+\sectionheader{Conference publications}
+\begin{enumerate}
 \item \textit{DM Culley, SW Funke, SC Kramer, MD Piggott.} Tidal stream resource assessment through optimisation of array design with quantification of uncertainty, \textit{EWTEC 2015 proceedings}, 2015.
 \item \textit{T Roc, SW Funke, KM Thyng.} Standard methodology for tidal array project optimisation: An idealized study of the Minas Passage, \textit{EWTEC 2015 proceedings}, 2015.
 \item \textit{SC Kramer, SW Funke, MD Piggott.} A continuous approach for the optimisation of tidal turbine farms, \textit{EWTEC 2015 proceedings}, 2015.
-\item \textit{DM Culley, SW Funke, SC Kramer, MD Piggott.} A hierarchy of approaches for the optimal design of tidal turbine arrays, Proceedings of the 5th International Conference on Ocean Energy, 2014.
-\item \textit{SW Funke, PE Farrell, MD Piggott.} Tidal turbine array optimisation using the adjoint approach, \textit{Renewable Energy}, 63, pp. 658-673,  2014.
-\item \textit{PE Farrell, CJ Cotter, SW Funke.} A framework for the automation of generalised stability theory. \textit{SIAM Journal on     Scientific Computing}, 36(1) pp. C25-C48, 2014.
-%\item \textit{PE Farrell, SW Funke}. Exploiting high-level structure in algorithmic differentiation, submitted, 2013.
-\item \textit{PE Farrell, DA Ham, SW Funke, ME Rognes.} Automated derivation of the adjoint of high-level transient finite element programs, \textit{SIAM Journal on Scientific Computing}, 35(4), pp. C369-C393, 2013.
-\item \textit{SW Funke, CC Pain, SC Kramer, MD Piggott.} A wetting and drying algorithm with a combined pressure/free-surface formulation for non-hydrostatic models, \textit{Advances in Water Resources}, 2011.
+\item \textit{DM Culley, SW Funke, SC Kramer, MD Piggott.} A hierarchy of approaches for the optimal design of tidal turbine arrays, \textit{Proceedings of the 5th International Conference on Ocean Energy}, 2014.
 \end{enumerate}
 
 \sectionheader{In review}
 \begin{enumerate}
 \item \textit{SW Funke, SC Kramer, MD Piggott.} Design optimisation and resource assessment for tidal-stream renewable energy farms using a new continuous turbine approach, \textit{Renewable Energy}, in review, 2015.
-\item \textit{PE Farrell, SW Funke.} Exploiting high-level structure in algorithmic differentiation, in review, 2014.
-\item \textit{GL Barnett, SW Funke, MD Piggott.} Hybrid global-local optimisation algorithms for the layout design of tidal turbine arrays, \textit{Renewable Energy}, in review, 2014.
+%\item \textit{PE Farrell, SW Funke.} Exploiting high-level structure in algorithmic differentiation, in review, 2014.
+%\item \textit{GL Barnett, SW Funke, MD Piggott.} Hybrid global-local optimisation algorithms for the layout design of tidal turbine arrays, \textit{Renewable Energy}, in review, 2014.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Presentations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
